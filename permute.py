@@ -1,6 +1,9 @@
 #! python3
 # Algorithm to list all permutations of a given string with unique letters.
 
+# We begin by implementing the factorial functions in a non-recursive and then
+# recursive way. These will come in handy to test our permutation functions.
+
 # Factorial without recursion
 def fac(n):
     if isinstance(n, int):
@@ -38,6 +41,8 @@ def letter_insert(string_list, letter):
             for i in range(0, len(string) + 1)])
     return result
 
+# We next implement the permutation function in a non-recursive and then recursive way.
+
 # permutation function starts from base case of swapping the first two letters of
 # a given string; we assume all of the string's letters occur only once, else the
 # resulting list will have repititions
@@ -46,7 +51,7 @@ def permute(string):
     for i in range(1, len(string)):
         result = letter_insert(result, string[i])
     if len(result) != fac(len(string)):
-        raise Exception('Something went wrong.')
+        raise Exception('Output does not have the expected number of permutations.')
     return result
 
 def rec_permute(string):
@@ -54,7 +59,7 @@ def rec_permute(string):
         temp = rec_permute(string[:-1])
         result = letter_insert(temp, string[-1])
         if len(result) != rec_fac(len(string)):
-            raise Exception('Something went wrong.')
+            raise Exception('Output does not have the expected number of permutations.')
         return result
     else:
         return(string)
