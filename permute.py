@@ -23,7 +23,7 @@ def fac(n):
 def rec_fac(n):
     if isinstance(n, int):
         if n > 0:
-            result = n * rec_fac(n-1)
+            result = n * rec_fac(n - 1)
         elif n == 0:
             result = 1
         elif n < 0:
@@ -32,8 +32,8 @@ def rec_fac(n):
     else:
         raise Exception('Input of factorial has to be an integer.')
 
-# function inserts a given letter into all possible slots of each string in a given
-# list of strings and retunrs the result as a list
+# Function inserts a given letter into all possible slots of each string in a given
+# list of strings and returns the result as a list
 def letter_insert(string_list, letter):
     result = []
     for string in string_list:
@@ -43,7 +43,7 @@ def letter_insert(string_list, letter):
 
 # We next implement the permutation function in a non-recursive and then recursive way.
 
-# permutation function starts from base case of swapping the first two letters of
+# Permutation function starts from base case of swapping the first two letters of
 # a given string; we assume all of the string's letters occur only once, else the
 # resulting list will have repititions
 def permute(string):
